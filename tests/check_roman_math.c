@@ -82,15 +82,6 @@ START_TEST(test_roman_NULL)
 }
 END_TEST
 
-START_TEST(test_roman_negative)
-{
-    ck_assert_msg(subtract_roman("CDXLII", "MMDCCCLXXXIV")==NULL, 
-        "Negative subtraction is not supported. first must be >= second!");
-    ck_assert_msg(subtract_roman("", "CDXLI")==NULL, 
-        "Negative subtraction is not supported. first must be >= second!");
-}
-END_TEST
-
 START_TEST(test_roman_empty)
 {
     char *result = add_roman("", "");
@@ -129,7 +120,6 @@ Suite * roman_math_suite(void)
 
     tcase_add_test(tc_limits, test_roman_NULL);
     tcase_add_test(tc_limits, test_roman_empty);
-    tcase_add_test(tc_limits, test_roman_negative);
     suite_add_tcase(s, tc_limits);
 
     return s;
