@@ -222,7 +222,7 @@ static void cross_out(char* a, char* b) {
     int i=n1-1, j=n2-1;
     int cnt=0;
     while (i >= 0 && j >= 0) {
-        while (a[i] == b[j]) {
+        while (i >= 0 && j >= 0 && a[i] == b[j]) {
             cnt++;
             i--;
             j--;

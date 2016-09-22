@@ -68,6 +68,11 @@ START_TEST(test_subtract_roman)
     result = subtract_roman("CDIV", "");
     ck_assert_str_eq(result, "CDIV");
     free(result);
+
+    result = subtract_roman("DCCCXI", "DCCCXI");
+    ck_assert_str_eq(result, "");
+    free(result);
+
 }
 END_TEST
 
